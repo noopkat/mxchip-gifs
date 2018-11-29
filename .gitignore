@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+.azurecomponent
+todo.txt
+Device/.build
+gifs
+.vscode

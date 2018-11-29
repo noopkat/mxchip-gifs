@@ -1,0 +1,161 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: paleturquoise;
+}
+
+#app {
+  margin: 100px auto;
+  display: inline-block;
+  position: relative;
+  border: 1px dashed #999;
+  border-radius: 12px;
+  padding: 20px;
+  height: auto;
+  width: 275px;
+  max-width: 275px;
+  background-color: white;
+}
+
+h1 {
+  font-size: 32px;
+  font-family: 'Fredoka One', cursive;
+  margin-top: 0;
+  color: #333;
+}
+
+canvas, .jsgif, #gifBox, {
+  display: inline-block;
+}
+
+#og, #preview  {
+ display: inline-block;
+ float: left;
+ height: 15px;
+ position: relative;
+ height: 100px;
+}
+
+#og span, #preview span {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.jsgif_toolbar  {
+  display: none;
+  min-width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.jsgif {
+  padding-bottom: -2px;
+}
+
+.jsgif, #frameCanvas {
+  border: 1px solid lavender;
+  margin-right: 5px;
+  display: block;
+}
+
+#gifBox {
+  padding: 10px;
+  margin: 0;
+  display: none;
+  text-align: center;
+}
+
+form {
+  display: block;
+  position: relative;
+}
+
+fieldset {
+  border: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+#deviceChoice {
+  border-top: 1px solid lavender;
+  padding-top: 10px;
+  display: none;
+}
+
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: none;
+}
+
+input[type='file']:focus {
+  outline: 3px solid #0000ff;
+  border: 3px solid #0000ff;
+}
+
+#filename {
+  /*min-width: 175px;
+  max-width: 175px;
+  max-height: 20px;*/
+  font-size: 16px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  text-overflow: ellipsis; 
+  padding: 0;
+  margin: 0;
+}
+
+input[type='submit'] {
+  background-color: #94e1ac;
+  border: 1px solid #80c495;
+  border-radius: 4px;
+  padding: 4px 8px 4px 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+button.fileInputButton {
+  background-color: #acd3f6;
+  border: 1px solid #7998b4;
+  border-radius: 4px;
+  padding: 4px 8px 4px 8px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+            
+select {
+  font-size: 16px;
+  height: 30px;
+}
+
+label {
+  display: block;
+  margin: 0 0 8px 0;
+}
+
+#truncateWarning, #iothubWarning {
+  font-size: 14px;
+  display: none;
+  margin: 8px 0 15px 0;
+  padding: 7px;
+  background-color: #FFCDC2;
+  border: 1px solid salmon;
+  border-radius: 8px;
+}
+
+#sendStatus {
+ display: none;
+}
+

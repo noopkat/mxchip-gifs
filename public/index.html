@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>chip gifs</title>
+      <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+      <link href="css/main.css" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=2">
+  </head>
+  <body>
+    <main>
+      <div id="app">
+        <h1>✉️    💌 ✉️
+        <br/>Send a GIF to the <br/>✨ MXCHIP ✨</h1>
+          <p id="iothubWarning">☠️ Oops! Looks like you need to set your IoTHub connection string as a process variable!</p>
+        <form>
+          <input type="file" name="gifFile"/>
+          <button class="fileInputButton">Choose GIF file</button>
+          <p id="filename"></p>
+          <div id="gifBox">
+             <div id="og"><span>original</span></div>
+             <div id="preview"><span>preview</span></div> 
+          </div>
+          <p id="truncateWarning">Oops! We truncated your GIF because it had too many frames 🙈</p>
+          <fieldset id="deviceChoice">
+            <label for="deviceId">Choose a device to send it to:</label>
+            <select name="deviceId"></select>
+          </fieldset>
+          <input type="submit" value="Send GIF!"/>
+          <p id="sendStatus"></p>
+        </form>
+      </main>
+    </div>
+  <script src="js/vendor/libgif.js"></script>
+  <script src="js/dist/chipgif.bundle.js"></script>
+  </body>
+</html>
+
