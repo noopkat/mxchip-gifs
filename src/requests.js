@@ -1,5 +1,3 @@
-const defaultDevice = 'homeChipCoconut';
-
 export const sendPayload = (frames, width, height, deviceId) => {
   const fetchBody = JSON.stringify({
     deviceId,
@@ -23,8 +21,7 @@ export const populateDeviceList = ($select, $iothubWarning) => {
     .then((res) => res.json())
     .then((list) => {
        if (!list.length) return $iothubWarning.style.display = 'inline-block'; 
-
-       const options = list.map((d) => `<option ${(d === defaultDevice) ? 'selected' : ''}>${d}</option>`); 
+       const options = list.map((d) => `<option>${d}</option>`); 
        $select.innerHTML = options.join('\n');
     })
     .catch(console.error);
