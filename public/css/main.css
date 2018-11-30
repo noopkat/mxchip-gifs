@@ -24,6 +24,26 @@ h1 {
   color: #333;
 }
 
+a {
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  color: royalblue;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid royalblue;
+}
+
+a:visited {
+  color: mediumpurple;
+  border-bottom: 1px solid mediumpurple;
+}
+
+a:hover {
+  color: fuchsia;
+  border-bottom: 1px solid fuchsia;
+}
+
 canvas, .jsgif, #gifBox, {
   display: inline-block;
 }
@@ -101,9 +121,6 @@ input[type='file']:focus {
 }
 
 #filename {
-  /*min-width: 175px;
-  max-width: 175px;
-  max-height: 20px;*/
   font-size: 16px;
   overflow: hidden;
   position: relative;
@@ -118,6 +135,7 @@ input[type='submit'] {
   border: 1px solid #80c495;
   border-radius: 4px;
   padding: 4px 8px 4px 8px;
+  margin-bottom: 10px;
   font-size: 16px;
   cursor: pointer;
   display: none;
