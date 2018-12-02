@@ -1,4 +1,5 @@
 # mxchip-gifs
+
 A website to upload GIFs to the MXCHIP
 
 ## How do I run this example application?
@@ -52,3 +53,16 @@ Our website needs to be able to see which devices are registered in your IoT Hub
 ## Contributing
 
 Contributions are welcomed! Please open a pull request or issue and detail as much as you can your ideas for improvement.
+
+## How to build/run (native)
+
+```bash
+npm install
+npm run start
+```
+
+## How to build/run (Docker)
+
+```bash
+docker-compose up
+```
