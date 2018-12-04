@@ -38,7 +38,7 @@ We'll need to store some credentials on your MXCHIP device so that it can connec
 
 Our website needs to be able to see which devices are registered in your IoT Hub, and also to invoke device methods to control devices remotely. For this, we'll need a connection string for IoT Hub which has the right access policies.
 
-1. Create a new IoT Hub Access Policy with Service Connect, Registry Read, and Registry Write permissions. Name it 'mxchipgif' so that you remember what you created it for.
+1. [Create a new IoT Hub Access Policy](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#access-control-and-permissions) with Service Connect, Registry Read, and Registry Write permissions. Name it 'mxchipgif' so that you remember what you created it for.
 2. Copy the connection string for that policy.
 3. Open the .env file in thie repository's folder on your computer in Visual Studio Code. Add the connection string value you copied in the previous step.
 4. We're ready to run the server!
