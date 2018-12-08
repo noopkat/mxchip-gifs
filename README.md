@@ -54,15 +54,4 @@ Our website needs to be able to see which devices are registered in your IoT Hub
 
 Contributions are welcomed! Please open a pull request or issue and detail as much as you can your ideas for improvement.
 
-## How to build/run (native)
-
-```bash
-npm install
-npm run start
-```
-
-## How to build/run (Docker)
-
-```bash
-docker-compose up
-```
+Check out the CONTRIBUTING.md file in this repository for details.
