@@ -2,6 +2,8 @@
 
 A website to upload GIFs to the MXCHIP
 
+![screenshot of web app](app-screenshot.gif)![animated gif of mxchip showing a gif](chip-screenshot.gif)
+
 ## How do I run this example application?
 
 Great question - let's get started. Most importantly though - install [NodeJS](https://nodejs.org) (version 8 or higher is fine).
