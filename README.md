@@ -43,12 +43,12 @@ Our website needs to be able to see which devices are registered in your IoT Hub
 
 1. [Create a new IoT Hub Access Policy](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#access-control-and-permissions) with Service Connect, Registry Read, and Registry Write permissions. Name it 'mxchipgif' so that you remember what you created it for.
 2. Copy the connection string for that policy.
-3. Open the .env file in thie repository's folder on your computer in Visual Studio Code. Add the connection string value you copied in the previous step.
+3. Open the .env file in this repository's folder on your computer in Visual Studio Code. Add the connection string value you copied in the previous step.
 4. We're ready to run the server!
 
 ### 5. Start the server
 
-1. Within this repository's folder on your computer, use your favourite terminal to run `npm install` 
+1. Within this repository's folder on your computer, use your favourite terminal to run `cd server && npm install` 
 2. Then, run `npm start` and navigate to localhost:3000 in your favourite browser
 3. Try sending a GIF to your MXCHIP! ^___^
 
