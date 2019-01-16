@@ -33,9 +33,11 @@ We'll need to store some credentials on your MXCHIP device so that it can connec
 
 1. [Install Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) if you have not already.
 2. [Setup your development environment for the MXCHIP following the guide](https://microsoft.github.io/azure-iot-developer-kit/docs/get-started/).
-3. Open this repository's Device directory in Visual Studio Code, and accept the option to open the IoT Workbench Workspace when prompted
-4. Hit Ctrl (or Cmd on OSX) + P to bring up the Command Pallette, and then type IoT Workbench. Navigate to 'Device', then 'Device Upload' to upload the device code to your MXCHIP. Ensure your MXCHIP is plugged in ^___^
-5. The code should now be running on your device and waiting for a GIF! Onwards.
+    > You could use the commands from Azure IoT Device Workbench to provision IoTHub as well as set your device connection string. Check the above guide for details.
+3. Open *project.code-workspace* file from the repository's root directory in Visual Studio Code.
+4. Hit Ctrl (or Cmd on OSX) + P to bring up the Command Pallette, then type **Arduino: Library Manager**, search for **ArduinoJson** and install the latest stable release. Please do not install beta versions which contain breaking changes.
+5. Hit Ctrl (or Cmd on OSX) + P again, and then type **Azure IoT Device Workbench**. Select the command of **Azure IoT Device Workbench: Update Device Code** to upload the device code to your MXCHIP. Ensure your MXCHIP is plugged in ^___^
+6. The code should now be running on your device and waiting for a GIF! Onwards.
 
 ### 4. Add IoT Hub connection string to your environment variables
 
@@ -43,7 +45,12 @@ Our website needs to be able to see which devices are registered in your IoT Hub
 
 1. [Create a new IoT Hub Access Policy](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#access-control-and-permissions) with Service Connect, Registry Read, and Registry Write permissions. Name it 'mxchipgif' so that you remember what you created it for.
 2. Copy the connection string for that policy.
-3. Open the .env file in this repository's folder on your computer in Visual Studio Code. Add the connection string value you copied in the previous step.
+3. Create a .env file under the repository's *server* folder in Visual Studio Code. Add the connection string value you copied in the previous step with the following format.
+
+    ```dosini
+    CONNECTION_STRING=your_connection_string
+    ```
+
 4. We're ready to run the server!
 
 ### 5. Start the server
