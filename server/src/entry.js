@@ -62,6 +62,17 @@ const formOnSubmit = (e) => {
      });
 }
 
+const fileInputOnChange = function(file) {
+  $filename.textContent = file.name; 
+  const objectURL = window.URL.createObjectURL(file);
+  const $gif = new Image();
+  $gif.src = objectURL;
+  $gif.onload = () => gifOnLoad($gif);
+  $submitButton.style.display = 'inline-block';
+  $fieldsetDevice.style.display = 'block';
+  $fileDropzone.removeFile(file);
+}
+
 const gifOnLoad = ($image) => {
   resetDom();
   
@@ -107,18 +118,7 @@ const $sendStatus = $form.querySelector('#sendStatus');
 const $fileDropzone = new Dropzone(document.body, dropzoneOptions);
 
 $form.addEventListener('submit', formOnSubmit);
-
-$fileDropzone.on("addedfile", (file) => {
-  $filename.textContent = file.name; 
-  const objectURL = window.URL.createObjectURL(file);
-  const $gif = new Image();
-  $gif.src = objectURL;
-  $gif.onload = () => gifOnLoad($gif);
-  $submitButton.style.display = 'inline-block';
-  $fieldsetDevice.style.display = 'block';
-  $fileDropzone.removeFile(file);
-})
-
+$fileDropzone.on("addedfile", fileInputOnChange);
 
 // get device list early before user sees the dropdown 
 populateDeviceList($select, $iothubWarning);
