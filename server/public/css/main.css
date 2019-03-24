@@ -103,6 +103,17 @@ fieldset {
   display: none;
 }
 
+#fileDropzone {
+  color: #333;
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 2px dotted royalblue;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: lavender;
+  cursor: pointer;
+}
+
 #filename {
   font-size: 16px;
   text-align: center;

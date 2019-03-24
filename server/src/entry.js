@@ -92,7 +92,7 @@ const gifOnLoad = ($image) => {
 
 const dropzoneOptions = {
   acceptedFiles: "image/gif",
-  clickable: "div#fileDropzone",
+  clickable: "button#fileDropzone",
   createImageThumbnails: false,
   maxFiles: 1,
   autoQueue: false,
@@ -115,9 +115,12 @@ const $fieldsetDevice = $form.querySelector("#deviceChoice");
 const $submitButton = $form.querySelector('input[type="submit"]');
 const $select = $form.querySelector('select');
 const $sendStatus = $form.querySelector('#sendStatus');
+const $dropzoneButton = $form.querySelector('#fileDropzone');
 const $fileDropzone = new Dropzone(document.body, dropzoneOptions);
 
 $form.addEventListener('submit', formOnSubmit);
+$dropzoneButton.addEventListener('press', (event) => event.preventDefault());
+$dropzoneButton.addEventListener('click', (event) => event.preventDefault());
 $fileDropzone.on("addedfile", fileInputOnChange);
 
 // get device list early before user sees the dropdown 
