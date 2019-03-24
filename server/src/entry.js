@@ -12,6 +12,8 @@ const resetDom = () => {
 
   const $prevFrameCanvas = document.querySelector('#frameCanvas');
   $prevFrameCanvas && $prevFrameCanvas.remove();
+
+  $fileDropzone.removeAllFiles();
 }
 
 const calculateGifSize = (w, h) => {
@@ -60,8 +62,7 @@ const formOnSubmit = (e) => {
      });
 }
 
-const fileInputOnChange = function() {
-  const file = this.files[0];
+const fileInputOnChange = function(file) {
   $filename.textContent = file.name; 
   const objectURL = window.URL.createObjectURL(file);
   const $gif = new Image();
@@ -69,6 +70,7 @@ const fileInputOnChange = function() {
   $gif.onload = () => gifOnLoad($gif);
   $submitButton.style.display = 'inline-block';
   $fieldsetDevice.style.display = 'block';
+  $fileDropzone.removeFile(file);
 }
 
 const gifOnLoad = ($image) => {
@@ -88,6 +90,18 @@ const gifOnLoad = ($image) => {
     .then((previewCtx) => animateCanvasGif(previewCtx, getConvertedFrames(), width, height));
 }
 
+const dropzoneOptions = {
+  acceptedFiles: "image/gif",
+  clickable: "button#fileDropzone",
+  createImageThumbnails: false,
+  maxFiles: 1,
+  autoQueue: false,
+  url: "localhost", // We aren't using DZ to do the upload so this is not used
+  autoProcessQueue: false,
+  autoQueue: false,
+  previewTemplate: "<div></div>"
+};
+
 const screenWidth = 128;
 const screenHeight = 64;
 
@@ -96,17 +110,18 @@ const $gifBox = document.querySelector('#gifBox');
 const $truncateWarning = document.querySelector('#truncateWarning');
 const $iothubWarning = document.querySelector('#iothubWarning');
 const $form = document.querySelector('form');
-const $fileInput = $form.querySelector('input[type="file"]');
-const $fileButton = $form.querySelector('.fileInputButton');
 const $filename = $form.querySelector('#filename');
 const $fieldsetDevice = $form.querySelector("#deviceChoice"); 
 const $submitButton = $form.querySelector('input[type="submit"]');
 const $select = $form.querySelector('select');
 const $sendStatus = $form.querySelector('#sendStatus');
+const $dropzoneButton = $form.querySelector('#fileDropzone');
+const $fileDropzone = new Dropzone(document.body, dropzoneOptions);
 
 $form.addEventListener('submit', formOnSubmit);
-$fileInput.addEventListener('change', fileInputOnChange);
-$fileButton.addEventListener('click', (e) => {e.preventDefault(); $fileInput.click()});
+$dropzoneButton.addEventListener('press', (event) => event.preventDefault());
+$dropzoneButton.addEventListener('click', (event) => event.preventDefault());
+$fileDropzone.on("addedfile", fileInputOnChange);
 
 // get device list early before user sees the dropdown 
 populateDeviceList($select, $iothubWarning);
