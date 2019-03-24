@@ -17,7 +17,7 @@
           <form id="gifUrlForm">
             <label for="gifUrl">Or upload from a URL</label>
             <div>
-              <input type="text" id="gifUrl" name="gifUrl" placeholder="Enter a .gif URL" required />
+              <input type="url" id="gifUrl" name="gifUrl" placeholder="Enter a .gif URL" pattern="https?:\/\/.+\.gif" required />
               <button type="submit">Upload</button>
             </div>
           </form>
