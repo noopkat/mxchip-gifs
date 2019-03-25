@@ -20,7 +20,7 @@ const calculateGifSize = (w, h) => {
   const wR = screenWidth / w;
   const hR = screenHeight / h;
   const n = Math.min(wR, hR);
-  return [Math.ceil(n * w), Math.ceil(n * h)]; 
+  return [Math.ceil(n * w), Math.ceil(n * h)];
 }
 
 const resizeGif = ($image) => {
@@ -63,7 +63,7 @@ const formOnSubmit = (e) => {
 }
 
 const fileInputOnChange = function(file) {
-  $filename.textContent = file.name; 
+  $filename.textContent = file.name;
   const objectURL = window.URL.createObjectURL(file);
   const $gif = new Image();
   $gif.src = objectURL;
@@ -75,7 +75,7 @@ const fileInputOnChange = function(file) {
 
 const gifOnLoad = ($image) => {
   resetDom();
-  
+
   $gifBox.style.display = 'inline-block';
   const $gif = $gifBox.querySelector('#og').appendChild(resizeGif($image));
   const { width, height } = $gif;
@@ -111,18 +111,14 @@ const $truncateWarning = document.querySelector('#truncateWarning');
 const $iothubWarning = document.querySelector('#iothubWarning');
 const $form = document.querySelector('form');
 const $filename = $form.querySelector('#filename');
-const $fieldsetDevice = $form.querySelector("#deviceChoice"); 
+const $fieldsetDevice = $form.querySelector("#deviceChoice");
 const $submitButton = $form.querySelector('input[type="submit"]');
 const $select = $form.querySelector('select');
 const $sendStatus = $form.querySelector('#sendStatus');
-const $dropzoneButton = $form.querySelector('#fileDropzone');
 const $fileDropzone = new Dropzone(document.body, dropzoneOptions);
 
 $form.addEventListener('submit', formOnSubmit);
-$dropzoneButton.addEventListener('press', (event) => event.preventDefault());
-$dropzoneButton.addEventListener('click', (event) => event.preventDefault());
 $fileDropzone.on("addedfile", fileInputOnChange);
 
-// get device list early before user sees the dropdown 
+// get device list early before user sees the dropdown
 populateDeviceList($select, $iothubWarning);
-

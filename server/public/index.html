@@ -13,17 +13,17 @@
         <br/>Send a GIF to the <br/>✨ MXCHIP ✨</h1>
           <p id="iothubWarning">☠️ Oops! Looks like you need to set your IoTHub connection string as a process variable!</p>
         <form>
-          <button id="fileDropzone">Drop a GIF here <br/>or click to browse</button>
+          <button id="fileDropzone" type="button">Drop a GIF here <br/>or click to browse</button>
           <p id="filename"></p>
           <div id="gifBox">
              <div id="og"><span>original</span></div>
-             <div id="preview"><span>preview</span></div> 
+             <div id="preview"><span>preview</span></div>
           </div>
           <p id="truncateWarning">Oops! We truncated your GIF because it had too many frames 🙈</p>
           <fieldset id="deviceChoice">
             <label for="deviceId">Choose a device to send it to:</label>
             <select name="deviceId">
-               <option>No devices found</option> 
+               <option>No devices found</option>
             </select>
           </fieldset>
           <input type="submit" value="Send GIF!"/>
@@ -37,4 +37,3 @@
   <script src="js/dist/chipgif.bundle.js"></script>
   </body>
 </html>
-
