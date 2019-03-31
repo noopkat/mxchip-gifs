@@ -62,15 +62,29 @@ const formOnSubmit = (e) => {
      });
 }
 
+const gifUrlFormOnSubmit = (e) => {
+  e.preventDefault()
+  const gifUrlInput = $gifUrlForm.querySelector('#gifUrl');
+  const gifUrl = gifUrlInput.value;
+
+  $gifUrlForm.reset();
+  $filename.textContent = gifUrl; 
+  loadGif(gifUrl);
+}
+
 const fileInputOnChange = function(file) {
   $filename.textContent = file.name; 
   const objectURL = window.URL.createObjectURL(file);
+  loadGif(objectURL)
+  $fileDropzone.removeFile(file);
+}
+
+const loadGif = (url) => {
   const $gif = new Image();
-  $gif.src = objectURL;
+  $gif.src = url;
   $gif.onload = () => gifOnLoad($gif);
   $submitButton.style.display = 'inline-block';
   $fieldsetDevice.style.display = 'block';
-  $fileDropzone.removeFile(file);
 }
 
 const gifOnLoad = ($image) => {
@@ -109,19 +123,21 @@ const screenHeight = 64;
 const $gifBox = document.querySelector('#gifBox');
 const $truncateWarning = document.querySelector('#truncateWarning');
 const $iothubWarning = document.querySelector('#iothubWarning');
-const $form = document.querySelector('form');
+const $form = document.querySelector('#sendForm');
 const $filename = $form.querySelector('#filename');
 const $fieldsetDevice = $form.querySelector("#deviceChoice"); 
 const $submitButton = $form.querySelector('input[type="submit"]');
 const $select = $form.querySelector('select');
 const $sendStatus = $form.querySelector('#sendStatus');
-const $dropzoneButton = $form.querySelector('#fileDropzone');
+const $dropzoneButton = document.querySelector('#fileDropzone');
 const $fileDropzone = new Dropzone(document.body, dropzoneOptions);
+const $gifUrlForm = document.querySelector('#gifUrlForm')
 
 $form.addEventListener('submit', formOnSubmit);
 $dropzoneButton.addEventListener('press', (event) => event.preventDefault());
 $dropzoneButton.addEventListener('click', (event) => event.preventDefault());
 $fileDropzone.on("addedfile", fileInputOnChange);
+$gifUrlForm.addEventListener('submit', gifUrlFormOnSubmit);
 
 // get device list early before user sees the dropdown 
 populateDeviceList($select, $iothubWarning);

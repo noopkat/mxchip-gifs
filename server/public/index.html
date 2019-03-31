@@ -12,8 +12,16 @@
         <h1>✉️    💌 ✉️
         <br/>Send a GIF to the <br/>✨ MXCHIP ✨</h1>
           <p id="iothubWarning">☠️ Oops! Looks like you need to set your IoTHub connection string as a process variable!</p>
-        <form>
           <button id="fileDropzone">Drop a GIF here <br/>or click to browse</button>
+          <br />
+          <form id="gifUrlForm">
+            <label for="gifUrl">Or upload from a URL</label>
+            <div>
+              <input type="url" id="gifUrl" name="gifUrl" placeholder="Enter a .gif URL" pattern="https?:\/\/.+" required />
+              <button type="submit">Upload</button>
+            </div>
+          </form>
+          <form id="sendForm">
           <p id="filename"></p>
           <div id="gifBox">
              <div id="og"><span>original</span></div>
