@@ -109,7 +109,6 @@ const dropzoneOptions = {
   clickable: 'button#fileDropzone',
   createImageThumbnails: false,
   maxFiles: 1,
-  autoQueue: false,
   url: 'localhost', // We aren't using DZ to do the upload so this is not used
   autoProcessQueue: false,
   autoQueue: false,
