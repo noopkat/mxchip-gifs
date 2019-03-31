@@ -105,15 +105,15 @@ const gifOnLoad = ($image) => {
 }
 
 const dropzoneOptions = {
-  acceptedFiles: "image/gif",
-  clickable: "button#fileDropzone",
+  acceptedFiles: 'image/gif',
+  clickable: 'button#fileDropzone',
   createImageThumbnails: false,
   maxFiles: 1,
   autoQueue: false,
-  url: "localhost", // We aren't using DZ to do the upload so this is not used
+  url: 'localhost', // We aren't using DZ to do the upload so this is not used
   autoProcessQueue: false,
   autoQueue: false,
-  previewTemplate: "<div></div>"
+  previewTemplate: '<div></div>'
 };
 
 const screenWidth = 128;
@@ -125,7 +125,7 @@ const $truncateWarning = document.querySelector('#truncateWarning');
 const $iothubWarning = document.querySelector('#iothubWarning');
 const $form = document.querySelector('#sendForm');
 const $filename = $form.querySelector('#filename');
-const $fieldsetDevice = $form.querySelector("#deviceChoice");
+const $fieldsetDevice = $form.querySelector('#deviceChoice');
 const $submitButton = $form.querySelector('input[type="submit"]');
 const $select = $form.querySelector('select');
 const $sendStatus = $form.querySelector('#sendStatus');
@@ -133,7 +133,7 @@ const $fileDropzone = new Dropzone(document.body, dropzoneOptions);
 const $gifUrlForm = document.querySelector('#gifUrlForm')
 
 $form.addEventListener('submit', formOnSubmit);
-$fileDropzone.on("addedfile", fileInputOnChange);
+$fileDropzone.on('addedfile', fileInputOnChange);
 $gifUrlForm.addEventListener('submit', gifUrlFormOnSubmit);
 
 // get device list early before user sees the dropdown
