@@ -35,7 +35,7 @@ We'll need to store some credentials on your MXCHIP device so that it can connec
 2. [Setup your development environment for the MXCHIP following the guide](https://microsoft.github.io/azure-iot-developer-kit/docs/get-started/).
     > You could use the commands from Azure IoT Device Workbench to provision IoTHub as well as set your device connection string. Check the above guide for details.
 3. Open *project.code-workspace* file from the repository's root directory in Visual Studio Code.
-4. Hit Ctrl (or Cmd on OSX) + P to bring up the Command Pallette, then type **Arduino: Library Manager**, search for **ArduinoJson** and install the latest stable release. Please do not install beta versions which contain breaking changes.
+4. Hit Ctrl (or Cmd on OSX) + P to bring up the Command Pallette, then type **Arduino: Library Manager**, search for **ArduinoJson** and install version 5.13.5. Please do not install beta versions which contain breaking changes.
 5. Hit Ctrl (or Cmd on OSX) + P again, and then type **Azure IoT Device Workbench**. Select the command of **Azure IoT Device Workbench: Update Device Code** to upload the device code to your MXCHIP. Ensure your MXCHIP is plugged in ^___^
 6. The code should now be running on your device and waiting for a GIF! Onwards.
 
