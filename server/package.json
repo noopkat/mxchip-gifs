@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "opener http://localhost:3000 && node server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +17,9 @@
     "dotenv": "^6.1.0"
   },
   "devDependencies": {
-    "webpack": "^4.26.1",
+    "opener": "^1.5.1",
     "terser-webpack-plugin": "^1.1.0",
+    "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2"
   }
 }
