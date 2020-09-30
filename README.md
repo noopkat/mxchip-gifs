@@ -6,9 +6,9 @@ A website to upload GIFs to the MXCHIP
 
 ## How do I run this example application?
 
-Great question - let's get started. Most importantly though, you'll need to install a few things:
+Great question - let's get started. Most importantly though, you will need to install a few things:
  - [NodeJS](https://nodejs.org) (version 8 or higher is fine).
- - [Arduino IDE](https://www.arduino.cc/en/main/software) (For Windows users: For easy configuration, download the Installer instead of installing the app from the store).
+ - [Arduino IDE](https://www.arduino.cc/en/main/software) (For Windows users: For easy configuration, you can download the Installer instead of installing the app from the App store).
  - [Screen](https://linuxize.com/post/how-to-use-linux-screen/) OR [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
  - [ST-Link/V2](http://www.st.com/en/development-tools/stsw-link009.html) (to configure Windows USB drivers)
 - [VS Code](https://code.visualstudio.com/) and extensions:
@@ -21,7 +21,7 @@ Great question - let's get started. Most importantly though, you'll need to inst
 1. Create an IoT Hub
 2. Create a new device identity
 3. Set credentials on your MXCHIP
-4. Upload code to your MXCHIP
+4. Upload a code to your MXCHIP
 5. Add IoT Hub connection string to your environment variables
 6. Start the server!
 
