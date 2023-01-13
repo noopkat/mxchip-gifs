@@ -20,6 +20,6 @@
     "opener": "^1.5.1",
     "terser-webpack-plugin": "^1.1.0",
     "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.3.12"
   }
 }
